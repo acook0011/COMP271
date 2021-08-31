@@ -1,0 +1,30 @@
+public class StringUtilities {
+
+  static boolean isPalindrome(String string){
+    string = string.toLowerCase().replace(" ", ""); // normalize everything to lowercase & remove spaces
+    boolean result = true; // Assume it is a palindrome
+    for (int i = 0; i < string.length()/2; i++){ // Scan string up to its middle
+      result = result && (string.charAt(i) == string.charAt(string.length()-i-1));
+      System.out.printf("\n\t Comparing [%s] to [%s] ...", string.charAt(i), string.charAt(string.length()-i-1);
+      if (!result){
+        break;
+      }
+    }
+    return result;
+  } // method isPalindrome
+  
+  public static void main(String [] args){
+    String test = "did";
+    System.out.printf("\nString \"%s\" a palindrome? %B\n", test, isPalindrome(test));
+    
+    test = "Leonidas";
+    System.out.printf("\nString \"%s\" a palindrome? %B\n", test, isPalindrome(test));
+    
+    test = "Did";
+    System.out.printf("\nString \"%s\" a palindrome? %B\n", test, isPalindrome(test));
+    
+    test = "Race car";
+    System.out.printf("\nString \"%s\" a palindrome? %B\n", test, isPalindrome(test));
+  } // 
+  
+}
